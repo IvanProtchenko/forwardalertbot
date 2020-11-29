@@ -21,9 +21,7 @@ def id(message):
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def all_messages(message):
-    #bot.reply_to(message, 'Сообщение принято')
     if str(message.chat.id) == str(GROUP_SCAN_ID):
-        print('tru')
         for search in SEARCH_LIST:
             if search.upper() in message.text.upper():
                 bot.forward_message(GROUP_FRW_ID, message.chat.id, message.message_id)
