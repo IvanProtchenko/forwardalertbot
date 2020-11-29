@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+    forwardalertbot:
+        image: ivanprotchenko/forwardalertbot:latest
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /etc/timezone:/etc/timezone:ro
+        environment:
+            - TOKEN=0
+            - GROUP_SCAN_ID=-
+            - GROUP_FRW_ID=-
+            - SEARCH_LIST=['']
+            - HELLO_MSG=HELLO_MSG
+        container_name: forwardalertbot
+        restart: always
